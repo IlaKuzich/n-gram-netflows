@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    sensor:
+        build: .
+        networks:
+        - rabbit_net
+        environment:
+        - RABBIT_MQ_HOST=amqp://<username>:<password>@rabbitmq:5672/
+        - RABBIT_MQ_QUEUE=netflow
+        - RABBIT_MQ_OUTPUT_QUEUE=anomaly_report
+        - FLOW_BUFFER_SIZE=100
+        - WINDOW_SIZE=8
+        - STEP_SIZE=8
+        - N_GRAM_ORDER=4
+        - ANOMALY_THRESHOLD=17000
+        - WARNING_THRESHOLD=2.5
+        - BOT_THRESHOLD=1000
+        - ATTENUATION=0.8
+
+networks:
+    rabbit_net:
+        external: true
