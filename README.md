@@ -28,6 +28,9 @@ Examples: udp_CON_Domain Name Server_2.0, tcp_SRPA_HTTP protocol over TLS/SSL_3.
 
 You can see, that in average bot netflows has higher perplexity. It means that botnet flows has different patterns than normal. 
 
+![Perplexity distribution](https://github.com/IlaKuzich/n-gram-netflows/blob/main/perplexity_distribution.png)
+
+
 **Run sensor**
 
 To create network and start rabbitmq
